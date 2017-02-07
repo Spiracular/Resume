@@ -1,0 +1,43 @@
+#NEXUS
+
+	Begin taxa;
+	Dimensions ntax=32;
+	Taxlabels
+		Andricus
+		Antistrophus
+		Aulacidea
+		Aylax
+		Barbotinia
+		Biorhiza
+		Ceroptres
+		Diastrophus
+		Diplolepis
+		Eschatocerus
+		Gonaspis
+		Hedickiana
+		Ibalia
+		Iraella
+		Isocolus
+		Liposthenes_gle
+		Liposthenes_ker
+		Neaylax
+		Neuroterus
+		Panteliella
+		Paramblynotus
+		Parnips
+		Pediaspis
+		Periclistus
+		Phanacis_1
+		Phanacis_2
+		Plagiotrochus
+		Rhodus
+		Synergus
+		Synophromorpha
+		Timaspis
+		Xestophanes
+		;
+End;
+
+Begin trees;
+tree TREE1 = [&R](((((((((((((Hedickiana[&index=31]:0.194593,Neaylax[&index=30]:0.194593)[&index=32,posterior=0.965876,ccp=0.964809,height_95%_HPD={0.164183,0.221049}]:0.054653,Antistrophus[&index=29]:0.249246)[&index=33,posterior=0.946947,ccp=0.966083,height_95%_HPD={0.219779,0.27666}]:0.030087,(Liposthenes_ker[&index=28]:0.241145,Rhodus[&index=27]:0.241145)[&index=34,posterior=0.974673,ccp=0.966083,height_95%_HPD={0.210868,0.266441}]:0.038187)[&index=35,posterior=0.974673,ccp=0.749667,height_95%_HPD={0.247824,0.304002}]:0.024395,((Isocolus[&index=26]:0.256894,Panteliella[&index=25]:0.256894)[&index=36,posterior=0.778726,ccp=0.822978,height_95%_HPD={0.2253,0.28735}]:0.032358,Liposthenes_gle[&index=24]:0.289252)[&index=37,posterior=0.768062,ccp=0.749667,height_95%_HPD={0.258482,0.314717}]:0.014475)[&index=38,posterior=1.000000,ccp=1.000000,height_95%_HPD={0.275319,0.330116}]:0.032883,((Phanacis_1[&index=23]:0.225930,Phanacis_2[&index=22]:0.225930)[&index=39,posterior=0.904825,ccp=0.904825,height_95%_HPD={0.19627,0.251003}]:0.022514,Timaspis[&index=21]:0.248444)[&index=40,posterior=1.000000,ccp=1.000000,height_95%_HPD={0.21848,0.275638}]:0.088166)[&index=41,posterior=0.722741,ccp=0.689905,height_95%_HPD={0.307112,0.36375}]:0.016973,Aulacidea[&index=20]:0.353582)[&index=42,posterior=0.845108,ccp=0.530861,height_95%_HPD={0.316229,0.380984}]:0.010707,(((((Andricus[&index=19]:0.088676,Neuroterus[&index=18]:0.088676)[&index=43,posterior=0.999733,ccp=0.999733,height_95%_HPD={0.070116,0.105705}]:0.028685,Biorhiza[&index=17]:0.117360)[&index=44,posterior=1.000000,ccp=1.000000,height_95%_HPD={0.097015,0.138043}]:0.189665,Plagiotrochus[&index=16]:0.307026)[&index=45,posterior=0.912023,ccp=0.456590,height_95%_HPD={0.270529,0.341696}]:0.024271,(((Aylax[&index=15]:0.127371,Barbotinia[&index=14]:0.127371)[&index=46,posterior=1.000000,ccp=1.000000,height_95%_HPD={0.105284,0.14913}]:0.040967,Iraella[&index=13]:0.168337)[&index=47,posterior=1.000000,ccp=1.000000,height_95%_HPD={0.144623,0.195109}]:0.153488,Ceroptres[&index=12]:0.321826)[&index=48,posterior=0.432418,ccp=0.456590,height_95%_HPD={0.286834,0.359602}]:0.009472)[&index=49,posterior=0.936550,ccp=0.973197,height_95%_HPD={0.300211,0.365929}]:0.018525,Synergus[&index=11]:0.349822)[&index=50,posterior=0.547054,ccp=0.530861,height_95%_HPD={0.311565,0.377211}]:0.014468)[&index=51,posterior=0.963210,ccp=0.963210,height_95%_HPD={0.330743,0.392845}]:0.024845,(((Diastrophus[&index=10]:0.102396,Gonaspis[&index=9]:0.102396)[&index=52,posterior=1.000000,ccp=1.000000,height_95%_HPD={0.083229,0.119292}]:0.071483,(Synophromorpha[&index=8]:0.100714,Xestophanes[&index=7]:0.100714)[&index=53,posterior=1.000000,ccp=1.000000,height_95%_HPD={0.082229,0.121154}]:0.073165)[&index=54,posterior=1.000000,ccp=1.000000,height_95%_HPD={0.149117,0.196657}]:0.058925,Periclistus[&index=6]:0.232805)[&index=55,posterior=1.000000,ccp=0.963210,height_95%_HPD={0.20222,0.258007}]:0.156330)[&index=56,posterior=1.000000,ccp=1.000000,height_95%_HPD={0.353955,0.422161}]:0.031563,Ibalia[&index=5]:0.420698)[&index=57,posterior=0.563050,ccp=0.581034,height_95%_HPD={0.386285,0.459293}]:0.008926,Pediaspis[&index=4]:0.429624)[&index=58,posterior=0.840576,ccp=0.840576,height_95%_HPD={0.39135,0.466613}]:0.025413,(Paramblynotus[&index=3]:0.375382,Parnips[&index=2]:0.375382)[&index=59,posterior=0.994135,ccp=0.840576,height_95%_HPD={0.316571,0.425121}]:0.079655)[&index=60,posterior=1.000000,ccp=1.000000,height_95%_HPD={0.411216,0.492669}]:0.133152,Diplolepis[&index=1]:0.588189)[&index=61,posterior=1.000000,ccp=1.000000,height_95%_HPD={0.53486,0.647401}]:0.411812,Eschatocerus[&index=0]:1.000001)[&index=62,posterior=1.000000,ccp=1.000000,height_95%_HPD={1,1}]:0.000000;
+End;

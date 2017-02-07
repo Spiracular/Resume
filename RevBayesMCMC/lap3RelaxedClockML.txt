@@ -1,0 +1,91 @@
+Step 51 / 51		****************************************
+   -30558
+   -30559.7
+   
+   
+Iter        |      Posterior   |     Likelihood   |          Prior   |    elapsed   |        ETA   |
+----------------------------------------------------------------------------------------------------
+20000       |         -30347   |       -30391.5   |        44.4903   |   00:42:28   |   00:00:00   |
+
+                  Name                  | Param              |  Weight  |  Tried   | Accepted | Acc. Ratio| Parameters
+===============================================================================================================================
+Scaling                                  speciation               1.0000      19876       9090      0.4573 lambda = 0.4641
+Sliding                                  epsilon                  1.0000      20119       7550      0.3753 delta = 0.7762
+NarrowExchange                           phylogeny                5.0000      99564       8208      0.0824 
+NNI                                      phylogeny                1.0000      20143        488      0.0242 
+FNPR                                     phylogeny                3.0000      60234       1694      0.0281 
+SubtreeScale                             phylogeny                3.0000      59979       5339      0.0890 
+NodeTimeSlideUniform                     phylogeny               15.0000     301521      79431      0.2634 
+BetaSimplex                              r                        1.0000      19907       3740      0.1879 alpha = 4.4014
+BetaSimplex                              pi                       1.0000      19946       4154      0.2083 alpha = 58.8957
+Scaling                                  alpha_g                  1.0000      19921       8650      0.4342 lambda = 0.1820
+Scaling                                  mu[1]                    5.0000      99807      47531      0.4762 lambda = 0.6994
+Scaling                                  mu[2]                    5.0000     100328      42994      0.4285 lambda = 0.6097
+Scaling                                  mu[3]                    5.0000     100195      45212      0.4512 lambda = 0.7274
+Scaling                                  mu[4]                    5.0000      99904      43001      0.4304 lambda = 0.5618
+Scaling                                  mu[5]                    5.0000      99945      44785      0.4481 lambda = 0.8642
+Scaling                                  mu[6]                    5.0000      99547      45122      0.4533 lambda = 0.5949
+Scaling                                  mu[7]                    5.0000      99819      45614      0.4570 lambda = 0.9015
+Scaling                                  mu[8]                    5.0000      99683      43210      0.4335 lambda = 0.6253
+Scaling                                  mu[9]                    5.0000     100196      43356      0.4327 lambda = 0.5483
+Scaling                                  mu[10]                   5.0000      99508      44931      0.4515 lambda = 0.6477
+Scaling                                  mu[11]                   5.0000      99578      42871      0.4305 lambda = 0.9166
+Scaling                                  mu[12]                   5.0000     100023      45382      0.4537 lambda = 0.9051
+Scaling                                  mu[13]                   5.0000     100039      43620      0.4360 lambda = 0.7058
+Scaling                                  mu[14]                   5.0000      99927      44778      0.4481 lambda = 0.6524
+Scaling                                  mu[15]                   5.0000     100022      40886      0.4088 lambda = 0.5672
+Scaling                                  mu[16]                   5.0000     100163      45031      0.4496 lambda = 0.4448
+Scaling                                  mu[17]                   5.0000      99629      45620      0.4579 lambda = 0.8545
+Scaling                                  mu[18]                   5.0000      99577      42880      0.4306 lambda = 0.6062
+Scaling                                  mu[19]                   5.0000      99968      45051      0.4507 lambda = 0.6092
+Scaling                                  mu[20]                   5.0000      99656      45750      0.4591 lambda = 0.3960
+Scaling                                  mu[21]                   5.0000      99906      44238      0.4428 lambda = 0.6309
+Scaling                                  mu[22]                   5.0000     100399      47613      0.4742 lambda = 0.7345
+Scaling                                  mu[23]                   5.0000      99501      45543      0.4577 lambda = 0.5153
+Scaling                                  mu[24]                   5.0000      99830      44726      0.4480 lambda = 0.9440
+Scaling                                  mu[25]                   5.0000     100748      43996      0.4367 lambda = 1.0888
+Scaling                                  mu[26]                   5.0000      99822      47439      0.4752 lambda = 0.6120
+Scaling                                  mu[27]                   5.0000     100292      45751      0.4562 lambda = 0.6768
+Scaling                                  mu[28]                   5.0000      99826      46413      0.4649 lambda = 0.9841
+Scaling                                  mu[29]                   5.0000      99992      45344      0.4535 lambda = 1.0520
+Scaling                                  mu[30]                   5.0000      99515      43659      0.4387 lambda = 0.5285
+Scaling                                  mu[31]                   5.0000     100277      45776      0.4565 lambda = 0.5580
+Scaling                                  mu[32]                   5.0000     100319      44888      0.4475 lambda = 0.5363
+Scaling                                  mu[33]                   5.0000     100125      47666      0.4761 lambda = 1.5446
+Scaling                                  mu[34]                   5.0000      99825      50470      0.5056 lambda = 2.3321
+Scaling                                  mu[35]                   5.0000     100590      35368      0.3516 lambda = 3.4251
+Scaling                                  mu[36]                   5.0000     100252      58119      0.5797 lambda = 1.7185
+Scaling                                  mu[37]                   5.0000      99915      46552      0.4659 lambda = 1.3874
+Scaling                                  mu[38]                   5.0000      99970      44024      0.4404 lambda = 1.8352
+Scaling                                  mu[39]                   5.0000     100118      43466      0.4341 lambda = 0.8933
+Scaling                                  mu[40]                   5.0000     100362      41223      0.4107 lambda = 1.7209
+Scaling                                  mu[41]                   5.0000     100049      44652      0.4463 lambda = 2.2912
+Scaling                                  mu[42]                   5.0000     100144      50109      0.5004 lambda = 2.2166
+Scaling                                  mu[43]                   5.0000      99539      43985      0.4419 lambda = 0.9593
+Scaling                                  mu[44]                   5.0000     100056      40846      0.4082 lambda = 2.7892
+Scaling                                  mu[45]                   5.0000      99778      31838      0.3191 lambda = 3.1331
+Scaling                                  mu[46]                   5.0000     100069      42155      0.4213 lambda = 2.4553
+Scaling                                  mu[47]                   5.0000     100251      43751      0.4364 lambda = 1.5462
+Scaling                                  mu[48]                   5.0000     100306      46854      0.4671 lambda = 0.9768
+Scaling                                  mu[49]                   5.0000     100866      39892      0.3955 lambda = 1.8748
+Scaling                                  mu[50]                   5.0000      99482      47104      0.4735 lambda = 2.3360
+Scaling                                  mu[51]                   5.0000      99977      44998      0.4501 lambda = 0.9470
+Scaling                                  mu[52]                   5.0000     100304      43730      0.4360 lambda = 1.0261
+Scaling                                  mu[53]                   5.0000      99456      43305      0.4354 lambda = 1.4178
+Scaling                                  mu[54]                   5.0000     100116      48723      0.4867 lambda = 2.0446
+Scaling                                  mu[55]                   5.0000     100451      44997      0.4479 lambda = 1.7797
+Scaling                                  mu[56]                   5.0000      99799      43965      0.4405 lambda = 2.0269
+Scaling                                  mu[57]                   5.0000      99857      48401      0.4847 lambda = 2.2010
+Scaling                                  mu[58]                   5.0000      99807      45994      0.4608 lambda = 1.5749
+Scaling                                  mu[59]                   5.0000      99914      57071      0.5712 lambda = 1.8538
+Scaling                                  mu[60]                   5.0000      99928      37174      0.3720 lambda = 2.9305
+Scaling                                  mu[61]                   5.0000      99477      43438      0.4367 lambda = 2.0032
+Scaling                                  mu[62]                   5.0000     100066      53370      0.5333 lambda = 2.3840
+
+   Processing file "output/lap3_cyn_relaxed_clock_long_step/lap3_cyn_relaxed_clock_long_step.trees"
+   Compiling MAP tree from 2001 trees in tree trace, using a burnin of 500 trees.
+   Compiling 95% HPD node ages from 2001 total trees in tree trace, using a burnin of 500 trees.
+   Annotating tree ...
+
+Running burn-in phase of Power Posterior sampler for 1000 iterations.
+The simulator uses 72 different moves in a random move schedule with 342 moves per iteration

@@ -1,0 +1,207 @@
+#########################
+# 1: Read in your data. #
+#########################
+#from strict_clock
+
+# define your data and output directory first
+input = "data/"
+name = "cyn_strict_clock_long_step"
+output = "output/" + name + "/"
+
+##from Hoehna's ml_BD
+# set my move index
+mi = 0
+
+# read in sequence data
+data_28S <- readDiscreteCharacterData(input + "28S.nex")
+data_COI <- readDiscreteCharacterData(input + "COI.nex")
+data_ef1a <- readDiscreteCharacterData(input + "28S.nex")
+data_LWRh <- readDiscreteCharacterData(input + "28S.nex")
+
+# concatenate them into one alignment
+data <- concatenate(data_28S, data_COI, data_ef1a, data_LWRh)
+
+# get some useful information about the data
+taxa <- data.taxa()
+num_taxa <- data.ntaxa()
+num_branches <- 2 * num_taxa - 2
+num_sites <- data.nchar()
+
+###########################
+# 2. Describe your model. #
+###########################
+#from strict clock
+
+##Using strict clock's tree model, emerging from Birth-Death model rather than giving
+## a spread with uniform topology and dnExponential branch lengths
+
+# Define the birth-death model.
+speciation ~ dnGamma(1.0,1.0)
+epsilon ~ dnBeta(1.0,1.0)
+extinction := speciation * epsilon
+rho <- 32 / 1300
+
+# Specify a fixed value for the root age.
+T <- 1.0
+
+phylogeny ~ dnBDP(lambda=speciation, mu=extinction, rootAge=T, rho=rho, taxa=taxa )
+
+# Now, we define the rate matrix
+# we'll use what's called a GTR model,
+# which has stationary frequencies (pi)
+# and exchangeability parameters (er).
+# we assume "flat" dirichlet distributions
+# for both sets of parameters.
+
+pi_prior <- v(1,1,1,1)
+pi ~ dnDirichlet(pi_prior)
+
+r_prior <- v(1,1,1,1,1,1)
+r ~ dnDirichlet(r_prior)
+
+Q := fnGTR(r,pi)
+
+###GTG G component
+# Now, define the gamma-distributed
+# ASRV model
+a <- 1.0
+alpha_g ~ dnExponential(a)
+gamma_cats := fnDiscretizeGamma(alpha_g,alpha_g,4)
+
+# Now we make the clock model
+alpha_c <- 4.0
+beta  <- 40.0
+mu ~ dnGamma(alpha_c,beta)
+
+##In dnPhyloCTMC, I combined defined branch rates (clock) and site rates (GTR G)
+
+# Finally, we have to model the
+# data, namely _the sequences_
+seq ~ dnPhyloCTMC(tree=phylogeny, Q=Q, branchRates=mu, siteRates=gamma_cats, type="DNA")
+seq.clamp(data)
+
+#######################
+# 3. Make your moves. #
+#######################
+#from strict clock
+
+# first, we'll make a dummy variable
+# to help us keep track of the move we're
+# adding
+move_index = 1
+
+# We need moves on the birth-death
+# process model parameters
+moves[move_index++] = mvScale(speciation,lambda=1.0,weight=1.0)
+moves[move_index++] = mvSlide(epsilon,delta=1.0,weight=1.0)
+
+# We need moves on the tree
+moves[move_index++] = mvNarrow(phylogeny, weight=5.0)
+moves[move_index++] = mvNNI(phylogeny, weight=1.0)
+moves[move_index++] = mvFNPR(phylogeny, weight=3.0)
+moves[move_index++] = mvSubtreeScale(phylogeny, weight=3.0)
+moves[move_index++] = mvNodeTimeSlideUniform(phylogeny, weight=15.0)
+
+# Now, we need moves for the
+# substitution model parameters
+moves[move_index++] = mvSimplexElementScale(r,alpha=1.0,weight=1.0)
+moves[move_index++] = mvSimplexElementScale(pi,alpha=1.0,weight=1.0)
+
+##from GTR G
+moves[move_index++] = mvScale(alpha_g,lambda=1.0,weight=1.0)
+
+# Finally, we need moves for the
+# clock-rate model
+moves[move_index++] = mvScale(mu,lambda=1.0,weight=1.0)
+
+###########################
+# 4. Complete your model. #
+###########################
+#from strict clock
+
+my_model = model(Q)
+
+#########################
+# 5. Make the monitors. #
+#########################
+
+monitors[1] = mnModel(filename=output + name + ".log",printgen=10, separator = TAB)
+monitors[2] = mnFile(filename=output + name + ".trees",printgen=10, separator = TAB, phylogeny)
+monitors[3] = mnScreen(printgen=100)
+
+
+#########################
+# 6. Make the analysis. #
+#########################
+
+analysis = mcmc(my_model, monitors, moves)
+
+
+########################
+# 7. Run the analysis. #
+########################
+
+analysis.burnin(generations=1000,tuningInterval=100)
+analysis.run(generations=20000)
+analysis.operatorSummary()
+
+######################
+# 8. Post-processing #
+######################
+
+# now, we will analyze the tree output.
+
+# start by reading in the tree trace
+treetrace = readTreeTrace(output + name + ".trees", treetype="clock")
+
+# now, we make a summary tree
+# called a map tree, and assign
+# posterior probabilities to clades
+# according to the frequency that they're
+# sampled in treetrace
+
+map_tree = mapTree(treetrace,output + name + ".tree")
+
+################
+# The Analysis #
+################
+#from Hoehna's ml_BD
+
+############SCRAP###########
+#
+##from Hoehna's MRBD
+# ### compute power posterior distributions
+# pow_p = powerPosterior(mymodel, moves, monitors, "output/MRBD_powp.out", cats=100, sampleFreq=10) 
+# pow_p.burnin(generations=5000,tuningInterval=200)
+# pow_p.run(generations=2000)  
+#
+# ### Use stepping-stone sampling to calculate marginal likelihoods
+# ss = steppingStoneSampler(file="output/MRBD_powp.out", powerColumnName="power", likelihoodColumnName="likelihood")
+# ss.marginal() 
+#
+# ### Use path-sampling to calculate marginal likelihoods
+# ps = pathSampler(file="output/MRBD_powp.out", powerColumnName="power", likelihoodColumnName="likelihood")
+# ps.marginal() 
+#
+###########SCRAP#############
+
+### compute power posterior distributions
+pow_p = powerPosterior(my_model, moves, monitors, output + name +"powp.out", cats=50, sampleFreq=10) 
+pow_p.burnin(generations=1000,tuningInterval=100)
+pow_p.run(generations=10000)  
+
+### Use stepping-stone sampling to calculate marginal likelihoods
+ss = steppingStoneSampler(file=output + name +"powp.out", powerColumnName="power", likelihoodColumnName="likelihood")
+ss.marginal() 
+
+### Use path-sampling to calculate marginal likelihoods
+ps = pathSampler(file=output + name +"powp.out", powerColumnName="power", likelihoodColumnName="likelihood")
+ps.marginal() 
+
+
+
+
+# you may want to quit RevBayes now
+q()
+
+
