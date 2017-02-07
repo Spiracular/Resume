@@ -12,7 +12,7 @@ Current contents (planned):
 
 ... to infer Phylogenetic Trees from Genomic Sequence Data
 
-**Languages Used:** RevBayes (specialized language, R-like syntax)
+**Languages Used:** RevBayes (specialized language; inspired by R and BUGS, R-like syntax)
 
 The Goal
 
