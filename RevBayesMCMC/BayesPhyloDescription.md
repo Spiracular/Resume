@@ -51,17 +51,24 @@ A very simple example of a Markov Chain is a "Random Walk."
 
 $$x_{t+1} = x_{t} + \{1,-1\}$$
 
-The position $x$ of a Markov Chain at time $t$ is partially determined by its value at $t-1$, and partially determined by a draw from a distribution called a *Probability Density Function* which defines the probabilities at each possible value. In this very simple case, we used a discrete distribution that had &#189; odds of picking 1, and &#189; odds odds of picking -1.
+The position $x$ of a Markov Chain at time $t$ is partially determined by its value at $t-1$, and partially determined by a draw from a distribution which defines the probability of each possible value. The function describing these probabilities for a continuous distribution is called the *Probability Density Function*. In this very simple case we used the following.
 
-Typically, though, this will instead be draws from a continuous distribution such as a Normal Distribution $N(m, \sigma)$, or a matrix representing transition-probabilities conditioned on the current value of $x$.
+A discrete distribution with...
 
-**Probability Density Function:** A distribution that defines the probability for each possible value such that they sum to a probability of 1.
+- &#189; odds of picking 1
+- &#189; odds odds of picking -1.
+
+Typically, though, this will instead be draws from a continuous distribution such as a Normal Distribution $N(m, \sigma)$, or a matrix $Q$ representing transition-probabilities conditioned on the current value of $x$ (described in detail later).
+
+**Probability Density Function:** A distribution that defines the probability for each mutually-exclusive possible value such that they sum to a total of 1.
 
 $$\int PDF(x)dx = 1$$
 
-It is not influened by  by earlier time reads. For this reason, people call the procedure "memoryless."
-
 ### Markov Chain Monte-Carlo (MCMC)
+
+A new draw of a Markov Chain is not influened by time reads earlier than the current held value. For this reason, people call the procedure "memoryless."
+
+A [Monte Carlo method](https://en.wikipedia.org/wiki/Monte_Carlo_method) describes an algorithmic procedure in which value-changes (called moves) on a set of alterable parameters are defined, and choice of move is determined stochastically. They get used in modeling high-uncertainty or linked phenomena.
 
 ### Metropolis-Hastings MCMC
 

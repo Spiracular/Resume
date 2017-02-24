@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="Display.css">
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		//show transparently on hover, make large on click?
+		// Eh. Lets start with just "large-on-click, fadeOut rest"
+/*		$(document).ready(function(){
+			$('img').click(function(){
+				$(this).removeClass('thumbnail');
+				$(this).fadeOut();
+			});
+		});*/
+
+/*	$(document).ready(function(){
+		$('img.thumbnail').click(function(){
+			$(this).removeClass("thumbnail");
+			$(this).addClass("fullsize");
+			$('img.thumbnail').fadeOut();
+		}),
+		$('img.fullsize').click(function(){
+			$(this).fadeOut();
+			$(this).addClass("thumbnail");			
+			$(this).removeClass("fullsize");
+			$('img.thumbnail').fadeIn();
+		});
+	});*/
+
+/*		$(document).ready(function(){
+			$('img').click(function(){
+				$("." + String($(this).attr('class'))).fadeOut();
+				$(this).toggleClass('thumbnail', 'fullsize');
+				$("." + String($(this).attr('class'))).fadeIn()
+				//$(this).fadeOut();
+
+				//Almost works!
+			});
+		});*/
+
+	$(document).ready(function(){
+		$('img').click(function(){
+			$("." + String($(this).attr('class'))).fadeOut('slow');
+			$(this).toggleClass('thumbnail', 'fullsize');
+			$("." + String($(this).attr('class'))).fadeIn('slow')
+			//$(this).fadeOut();
+		});
+	});
+
+//$(this).toggleClass('fullsize' 'thumbnail');
+
+	</script>
+</head>
+<body>
+		<img src="Images/Leading_Causes.png" class="thumbnail">
+		<img src="Images/Leading_Causes.png" class="thumbnail">
+		<!--<img src="Images/Leading_Causes.png" class="fullsize"> <!--augh! This works, that doesn't.-->
+	
+</body>
+</html>

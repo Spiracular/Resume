@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type='text/javascript'>
+		
+		function openTab(evt, tabName) {
+	    // Declare all variables
+	    var i, tabcontent, tablinks;
+
+	    // Get all elements with class="tabcontent" and hide them
+	    tabcontent = document.getElementsByClassName("tabcontent");
+	    for (i = 0; i < tabcontent.length; i++) {
+	        tabcontent[i].style.display = "none";
+	    }
+
+	    // Get all elements with class="tablinks" and remove the class "active"
+	    tablinks = document.getElementsByClassName("tablinks");
+	    for (i = 0; i < tablinks.length; i++) {
+	        tablinks[i].className = tablinks[i].className.replace(" active", "");
+	    }
+
+	    // Show the current tab, and add an "active" class to the link that opened the tab
+	    document.getElementById(tabName).style.display = "block";
+	    evt.currentTarget.className += " active";
+		}
+
+		//My addition to get images in
+
+/*		var img = new Image();
+		img.src = "images/myFolder/myImage.png";
+
+		imgnamearray  = Array("All_Deaths_Urban.png", "Leading_Causes.png", "Cancer.png", "Metro_Pop.png", "DeathByUrbanization_Details.png", "Metro_Size.png", "DeathsByUrbanization_Details.png", "OverallPattern.png", "Final2_AllDeaths.png", "Pneu_Deaths.png", "Final_AllDeaths.png", "Pneu_Elderly.png", "Fine_Hist.png", "Urban_Pop_Recolor.png", "Fine_Hist_Finer.png", "UvPop.png", "Fine_Hist_Finest.png", "preCauses.png", "Hypertension.png", "simple_Urban_Death.png")
+
+		//pseudocode
+
+		for name in array:
+			put image in document with class=thumbnail*/
+
+	</script>
+
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+	//show transparently on hover, make large on click?
+	// Eh. Lets start with just "large-on-click, fadeOut rest"
+	$(document).ready(function(){
+		$('img.thumbnail').click(function(){
+			$(this).removeClass("thumbnail");
+			$(this).addClass("fullsize");
+			$('img.thumbnail').fadeOut();
+		}),
+		$('img.fullsize').click(function(){
+			$(this).removeClass("fullsize");
+			$(this).addClass("thumbnail");
+			$('img.thumbnail').fadeIn();
+		});
+	});
+
+
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="Display.css">
+
+</head>
+<body>
+	
+	<div class="tab">
+	  <a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Graphs')">Graphs</a>
+	  <a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Paris')">Paris</a>
+	  <a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Tokyo')">Tokyo</a>
+	</div>
+
+	<div id="Graphs" class="tabcontent">
+	  <h3>Graphs</h3>
+	  <div class="frame">
+	  	
+	  	<h4>Some Images</h4>
+		<img src="Images/Leading_Causes.png" class="thumbnail">
+		<img src="Images/Leading_Causes.png" class="thumbnail">
+
+	  </div>
+	</div>
+
+	<div id="Paris" class="tabcontent">
+	  <h3>Paris</h3>
+	  <div class="frame">
+	  	
+
+
+	  </div> 
+	</div>
+
+	<div id="Tokyo" class="tabcontent">
+	  <h3>Tokyo</h3>
+	  <div class="frame">
+	  	
+
+
+	  </div>
+	</div>
+
+</body>
+</html>
