@@ -26,26 +26,19 @@ ReadMe.md : Includes Colab link for the default file + Colab
 Jupyter
 
 
-## MySQL + ERN + D3 Test Case
+## MERN Test Case
 
-**Languages Used:** JavaScript, SQL
+**Languages Used:** JavaScript
 
-MySQL/Node/Express/d3js/React
+MySQL OR MondoDB, Node/Express/React
 
-Followed tutorials to attatch D3 and Express with MySQL on the back-end, and a separate tutorial for d3js with Node and React on the front-end. Then mixed it.
-
+(No mixing React and D3js; D3 relies on refs, and is not very compatible with React's DOM paradigm)
 
 Subprojects:
 
-- d3nodevis
-    - Tutorial: ???
-    - Express/D3/MySQL integration
-    - MySQL 5.7 possibly works? (test?)
-        - Breaks with MySQL 6, because they adamantly refuse to offer a viable mechanism to SQL-ize a csv. (Yes, I tried messing with the cnf file permissions; didn't help.)
-        - If you need to downgrade to run it, MySQL makes that a bit painful. For instructions, see: Notesname
-- ReactProjects/my-d3-app
-    - [D3 and React tutorial](https://www.freecodecamp.org/news/how-to-get-started-with-d3-and-react-c7da74a5bd9f/)
-        - (Painful to copy-paste; rely on notes for reusability)
+- MySQL 5.7 possibly works? (test?)
+    - Breaks with MySQL 6, because they adamantly refuse to offer a viable mechanism to SQL-ize a csv. (Yes, I tried messing with the cnf file permissions; didn't help.)
+    - If you need to downgrade to run it, MySQL makes that a bit painful. For instructions, see: Notesname
 
 (...is PostgreSQL going to be easier for this? Not sure.)
 
