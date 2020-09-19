@@ -18,6 +18,9 @@ ReadMe.md : Includes Colab link for the default file + Colab
 - Example Processing Checklist on CSV
 - Example Processing Checklist on MySQL
 - Example Processing Checklist with BigQuery API input
+- `pytrends` "Google Trends API" mini-project:
+    - Timeseries
+    - `plotly` choropleth
 
 ## Some ML Tutorial Thing
 
