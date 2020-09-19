@@ -16,7 +16,7 @@ ReadMe.md : Includes Colab link for the default file + Colab
 
 - Empty default Jupyter processing checklist
 - Example Processing Checklist on CSV
-- Example Processing Checklist on SQL
+- Example Processing Checklist on MySQL
 - Example Processing Checklist with BigQuery API input
 
 ## Some ML Tutorial Thing
@@ -39,6 +39,10 @@ Subprojects:
 - MySQL 5.7 possibly works? (test?)
     - Breaks with MySQL 6, because they adamantly refuse to offer a viable mechanism to SQL-ize a csv. (Yes, I tried messing with the cnf file permissions; didn't help.)
     - If you need to downgrade to run it, MySQL makes that a bit painful. For instructions, see: Notesname
+
+...oh no. Mac is giving me issues with setting up MongoDB.
+
+Do this? https://zellwk.com/blog/install-mongodb/ (That worked! Use brew.)
 
 (...is PostgreSQL going to be easier for this? Not sure.)
 
