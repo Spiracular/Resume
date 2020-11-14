@@ -10,7 +10,7 @@ Current contents (planned):
 
 ## Jupyter Processing Checklist
 
-**Languages Used:** Python, SQL, BQ API
+**Languages Used:** Python, SQ<$checkbox field="status0" checked="closed" unchecked="open" default="open">task0</$checkbox>L, BQ API
 
 ReadMe.md : Includes Colab link for the default file + Colab 
 
@@ -29,25 +29,19 @@ ReadMe.md : Includes Colab link for the default file + Colab
 Jupyter
 
 
-## MERN Test Case
+## PERN Example Case
 
 **Languages Used:** JavaScript
 
-MySQL OR MondoDB, Node/Express/React
+PostgreSQL, Node/Express/React
 
 (No mixing React and D3js; D3 relies on refs, and is not very compatible with React's DOM paradigm)
 
 Subprojects:
 
-- MySQL 5.7 possibly works? (test?)
-    - Breaks with MySQL 6, because they adamantly refuse to offer a viable mechanism to SQL-ize a csv. (Yes, I tried messing with the cnf file permissions; didn't help.)
-    - If you need to downgrade to run it, MySQL makes that a bit painful. For instructions, see: Notesname
-
-...oh no. Mac is giving me issues with setting up MongoDB.
-
-Do this? https://zellwk.com/blog/install-mongodb/ (That worked! Use brew.)
-
-(...is PostgreSQL going to be easier for this? Not sure.)
+* This [video tutorial for PERN](https://www.youtube.com/watch?v=ldYcgPKEZC8) has been excellent. ([Github Link](https://github.com/l0609890/pern-todo-app))
+  * todo app from tutorial (link your own)
+* Some personal variant
 
 ## Bayesian MCMC with RevBayes
 
